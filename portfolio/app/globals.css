@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Theme/color pallete of my portolfio. This is built at runtime */  
+/* Theme/color pallete of my portolfio. This is built at build time */  
 @theme {
   --color-background: #DAB1DA;
   --color-surface:    #ffffff;
