@@ -1,20 +1,24 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Theme/color pallete of my portolfio. This is built at runtime */  
+@theme {
+  --color-background: #DAB1DA;
+  --color-surface:    #ffffff;
+  --color-foreground: #3C1C3C;
+  --color-accent:     #B1DAB1;
+  --color-muted:      #a07aa0;
+  --font-display: var(--font-chicle);   /* headings, groovy stuff */
+  --font-body:    var(--font-roboto);   /* body text, readable */
 }
 
-
+/* If user chooses Dark Mode on OS, a run time instruction that is user based */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-background: #3C1C3C;
+    --color-foreground: #DAB1DA;
+    --color-accent:     #B1DAB1;
+    --color-muted:      #8a6a8a;
+    --color-surface:    #4a2a4a;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
