@@ -16,15 +16,15 @@ export default function NavBar() {
     const pathname = usePathname();
     /*Finish creating the navbar by flex box three sections: Title, NavList, Button for contact. Make logo */
     return (
-        <nav className="w-full h-20 bg-foreground flex items-center md:justify-evenly justify-between md:pl-0 md:pr-0 pl-8 pr-16">
+        <nav className="w-full h-20 bg-background flex items-center md:justify-evenly justify-between md:pl-0 md:pr-0 pl-8 pr-16">
             {/* This is for medium screens */}
-            <div className="hidden md:flex text-3xl font-display text-background">James Boyle</div>
+            <div className="hidden md:flex text-3xl font-display text-foreground">James Boyle</div>
             <ul className="space-x-4 gap-10 hidden md:flex">
                 {NavList.map((item) => (
                     <li key={item.href}>
                         <Link
                             href={item.href}
-                            className={`hover:underline font-display text-3xl text-background hover:text-primary ${pathname === item.href ? "font-bold" : ""}`}
+                            className={`hover:underline font-display text-3xl text-foreground hover:text-primary ${pathname === item.href ? "font-bold" : ""}`}
                         >
                             {item.name}
                         </Link>
@@ -32,8 +32,8 @@ export default function NavBar() {
                 ))}
             </ul>
             {/* From https://v1.tailwindcss.com/components/buttons with slight modifications*/}
-            <button className="hidden md:flex hover:cursor-pointer font-body bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground py-2 px-4 border border-background  rounded">
-            Hire Me (:
+            <button className="hidden md:flex hover:cursor-pointer font-display text-3xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
+            Hire Me
             </button>
 
             {/* This is for small and below screens */}
@@ -43,6 +43,8 @@ export default function NavBar() {
             >
                 Menu
             </button>
+
+            {/* Box that opens on isOpenm*/}
             {isOpen && (
                 <ul className="absolute top-20 left-0 w-full bg-foreground flex flex-col items-center space-y-4 py-4">
                     {NavList.map((item) => (
@@ -58,6 +60,7 @@ export default function NavBar() {
                 </ul>
             )}
 
+            {/* Should be looked at for DRY method, used earlier */}
             <div className="md:hidden flex text-3xl font-display text-background">James Boyle</div>
         </nav>
         
