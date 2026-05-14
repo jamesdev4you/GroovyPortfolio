@@ -1,5 +1,5 @@
 "use client";
-
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -11,28 +11,56 @@ const NavList = [
 
 export default function NavBar() {
 
+    const [isOpen, setIsOpen] = useState(false);
+
     const pathname = usePathname();
     /*Finish creating the navbar by flex box three sections: Title, NavList, Button for contact. Make logo */
     return (
-        <nav className="w-full h-20 bg-foreground flex items-center justify-evenly">
-            <div className="text-3xl font-display text-background">James Boyle</div>
-            <ul className="flex space-x-4 gap-10">
+        <nav className="w-full h-20 bg-foreground flex items-center md:justify-evenly justify-between md:pl-0 md:pr-0 pl-8 pr-16">
+            {/* This is for medium screens */}
+            <div className="hidden md:flex text-3xl font-display text-background">James Boyle</div>
+            <ul className="space-x-4 gap-10 hidden md:flex">
                 {NavList.map((item) => (
                     <li key={item.href}>
                         <Link
                             href={item.href}
-                            className={`font-display text-3xl text-background hover:text-primary ${pathname === item.href ? "font-bold" : ""}`}
+                            className={`hover:underline font-display text-3xl text-background hover:text-primary ${pathname === item.href ? "font-bold" : ""}`}
                         >
                             {item.name}
                         </Link>
                     </li>
                 ))}
             </ul>
-            {/* From https://v1.tailwindcss.com/components/buttons */}
-            <button className="hover:cursor-pointer font-body bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground py-2 px-4 border border-background  rounded">
+            {/* From https://v1.tailwindcss.com/components/buttons with slight modifications*/}
+            <button className="hidden md:flex hover:cursor-pointer font-body bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground py-2 px-4 border border-background  rounded">
             Hire Me (:
             </button>
+
+            {/* This is for small and below screens */}
+            <button
+                className="md:hidden hover:cursor-pointer font-body bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground py-2 px-4 border border-background  rounded"
+                onClick={() => setIsOpen(!isOpen)}
+            >
+                Menu
+            </button>
+            {isOpen && (
+                <ul className="absolute top-20 left-0 w-full bg-foreground flex flex-col items-center space-y-4 py-4">
+                    {NavList.map((item) => (
+                        <li key={item.href}>
+                            <Link
+                                href={item.href}
+                                className={`hover:underline font-display text-3xl text-background hover:text-primary ${pathname === item.href ? "font-bold" : ""}`}
+                            >
+                                {item.name}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            )}
+
+            <div className="md:hidden flex text-3xl font-display text-background">James Boyle</div>
         </nav>
+        
     );
 
 }
