@@ -28,9 +28,13 @@ const SocialMedias = [
 
 {/* Imports for Skills Sections*/}
 const SkillBoxes = [
-  {name: "Technical", },
-  {name: "Design", },
-  {name: "Soft Skills", },
+  {name: "Technical", paragraphOne: (<>My expertise includes <span className="font-bold">Fullstack Development</span>, <span className="font-bold">Artificial Intelligence</span>, <span className="font-bold">AWS</span>, <span className="font-bold">DevOps</span>, and other far outtt skills! </>), paragraphTwo: (<>Solving technilogical problems is a blast! Staying hip to the most up to date tech is how I keep it cool. Check out my <span className="font-bold">resume </span>  for a more detailed explanation, or my <span className="font-bold">projects</span> if you gotta see it to believe it! </>)},
+  {name: "Design", paragraphOne: "When it comes to presentation, keeping it fresh is what I'm all about! A product and solution is only as good as it looks, and putting together a valuable asset involves making sure that it's dressed for the occassion.", paragraphTwo: (
+    <>
+      My modern <span className="font-bold">UX/UI design</span> principles and <span className="font-bold">Color Theory</span> knowledge allow me to excel in producing technically sound products that are appealing to see and interact with.
+    </>
+  )},
+  {name: "Interpersonal", paragraphOne: (<> To solve problems you gotta be down with communicating! With <span className="font-bold">six years</span> of <span className="font-bold">Customer Service</span> experience you could say I have a knack for speaking</>), paragraphTwo: (<> With two years of those years in customer service at an <span className="font-bold">IT Service Desk</span> for <span className="font-bold">USF</span>. Solving <span className="font-bold">OS, Networking, and IT troubleshooting</span> issues directly in person, or indirectly offline over the phone. Can you dig it? </>)},
 ]; 
 
 
@@ -100,10 +104,11 @@ export default function Home() {
           className="absolute z-0 right-10 bottom-10 [&_path]:stroke-accent! [&_circle]:stroke-accent!"
         />
         <div className="absolute w-10/12 h-full flex items-center justify-between   top-50">
-          {SkillBoxes.map(({ name }) => (
-              <div key={name} className=" flex items-start justify-center w-xs h-2/3 p-4 bg-accent
-               rounded-lg border-2 border-background top-30">
+          {SkillBoxes.map(({ name, paragraphOne, paragraphTwo }) => (
+              <div key={name} className=" flex-col items-center justify-center w-xs h-2/3 p-4 bg-accent rounded-lg border-2 border-background top-30">
                 <h2 className="text-4xl font-display text-background">{name}</h2>
+                <p className="text-background mt-4 font-semibold">{paragraphOne}</p>
+                <p className="text-background mt-4 font-semibold">{paragraphTwo}</p>
               </div>
           ))}
       
