@@ -16,7 +16,7 @@ export default function NavBar() {
     const pathname = usePathname();
     /*Finish creating the navbar by flex box three sections: Title, NavList, Button for contact. Make logo */
     return (
-        <nav className="fixed top-0 w-full h-20 bg-background flex items-center md:justify-evenly justify-between md:pl-0 md:pr-0 pl-8 pr-16">
+        <nav className="fixed z-50 top-0 w-full h-20 bg-background flex items-center md:justify-evenly justify-between md:pl-0 md:pr-0 pl-8 pr-16">
             {/* This is for medium screens */}
             <div className="hidden md:flex text-3xl font-display text-foreground">James Boyle</div>
             <ul className="space-x-4 gap-10 hidden md:flex">
