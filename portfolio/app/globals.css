@@ -2,11 +2,11 @@
 
 /* Theme/color pallete of my portolfio. This is built at build time */  
 @theme  {
-  --color-background: #DAB1DA;
+  --color-background: #3C1C3C;;
   --color-surface:    #ffffff;
-  --color-foreground: #3C1C3C;
+  --color-foreground: #DAB1DA;
   --color-accent:     #B1DAB1;
-  --color-muted:      #a07aa0;
+  --color-muted:      #F4A127;
   --font-display: var(--font-chicle);   /* headings, groovy stuff */
   --font-body:    var(--font-roboto);   /* body text, readable */
 }
@@ -17,7 +17,7 @@
     --color-background: #3C1C3C;
     --color-foreground: #DAB1DA;
     --color-accent:     #B1DAB1;
-    --color-muted:      #8a6a8a;
+    --color-muted:       #F4A127;
     --color-surface:    #4a2a4a;
   }
 }

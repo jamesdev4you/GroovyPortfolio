@@ -10,14 +10,13 @@
   How to use SVGs in NextJs with turbopack.
 */}
 
+{/* Imports for hero section */}
 import Image from "next/image"
 import HeroPic from "../public/picture/james138@usf.edu-d0f6cd3b.jpg"
-
 import GithubIcon from "../public/icons/github.svg"
 import LinkedInIcon from "../public/icons/linkedin.svg"
 import InstagramIcon from "../public/icons/instagram.svg"
 import XIcon from "../public/icons/x.svg"
-
 import Flower from "../public/icons/flower.svg"
 
 const SocialMedias = [
@@ -26,6 +25,14 @@ const SocialMedias = [
   { name: "Instagram", Icon: InstagramIcon, href: "https://www.instagram.com/jamesboyle813"},
   { name: "X", Icon: XIcon, href: "https://x.com/elonmusk"},
 ];
+
+{/* Imports for Skills Sections*/}
+const SkillBoxes = [
+  {name: "Technical", },
+  {name: "Design", },
+  {name: "Soft Skills", },
+]; 
+
 
 export default function Home() {
   console.log("GithubIcon:", GithubIcon, typeof GithubIcon);
@@ -38,17 +45,17 @@ export default function Home() {
       <Flower
         width={200}
         height={200}
-        className="absolute z-0 text-foreground bottom-20 right-30 "
+        className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! bottom-20 right-30 "
       />
       <Flower
         width={50}
         height={50}
-        className="absolute z-0 text-foreground top-30 right-100 "
+        className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! top-30 right-100 "
       />
       <Flower
         width={50}
         height={50}
-        className="absolute z-0 text-foreground top-100 left-15 "
+        className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! top-100 left-15 "
       />
       {/* Hero Content */}
       <div className="flex items-end justify-around w-3/4 h-auto "> 
@@ -79,8 +86,34 @@ export default function Home() {
     </div>
 
     {/* Skills section */}
-    <div className="flex items-center justify-center bg-background w-full h-150">
-        
+    <div className="relative z-20 flex flex-col items-center justify-start bg-background w-full h-150 pt-20">      
+        <h1 className="text-8xl font-display text-accent">Some Gnarly Skills</h1>
+        {/* AI way to change svg colors to  my theme colors */}
+        <Flower
+          width={100}
+          height={100}
+          className="absolute z-0 left-30 top-30 [&_path]:stroke-accent! [&_circle]:stroke-accent!"
+        />
+        <Flower
+          width={60}
+          height={60}
+          className="absolute z-0 right-10 bottom-10 [&_path]:stroke-accent! [&_circle]:stroke-accent!"
+        />
+        <div className="absolute w-10/12 h-full flex items-center justify-between   top-50">
+          {SkillBoxes.map(({ name }) => (
+              <div key={name} className=" flex items-start justify-center w-xs h-2/3 p-4 bg-accent
+               rounded-lg border-2 border-background top-30">
+                <h2 className="text-4xl font-display text-background">{name}</h2>
+              </div>
+          ))}
+      
+        </div>
+  
+    </div>
+
+    {/* Hero section */}
+    <div className=" z-10 flex items-center justify-center bg-foreground w-full h-screen">
+
     </div>
         
     </div>
