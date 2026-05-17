@@ -106,7 +106,7 @@ export default function Home() {
         <div className="absolute w-10/12 h-full flex items-center justify-between   top-50">
           {SkillBoxes.map(({ name, paragraphOne, paragraphTwo }) => (
               <div key={name} className=" flex-col items-center justify-center w-xs h-2/3 p-4 bg-accent rounded-lg border-2 border-background top-30">
-                <h2 className="text-4xl font-display text-background">{name}</h2>
+                <h2 className="text-4xl font-display text-background text-center underline">{name}</h2>
                 <p className="text-background mt-4 font-semibold">{paragraphOne}</p>
                 <p className="text-background mt-4 font-semibold">{paragraphTwo}</p>
               </div>
