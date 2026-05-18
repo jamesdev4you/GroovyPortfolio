@@ -34,9 +34,14 @@ const SkillBoxes = [
       My modern <span className="font-bold">UX/UI design</span> principles and <span className="font-bold">Color Theory</span> knowledge allow me to excel in producing technically sound products that are appealing to see and interact with.
     </>
   )},
-  {name: "Interpersonal", paragraphOne: (<> To solve problems you gotta be down with communicating! With <span className="font-bold">six years</span> of <span className="font-bold">Customer Service</span> experience you could say I have a knack for speaking</>), paragraphTwo: (<> With two years of those years in customer service at an <span className="font-bold">IT Service Desk</span> for <span className="font-bold">USF</span>. Solving <span className="font-bold">OS, Networking, and IT troubleshooting</span> issues directly in person, or indirectly offline over the phone. Can you dig it? </>)},
+  {name: "Interpersonal", paragraphOne: (<> To solve problems you gotta be down with communicating! With <span className="font-bold">six years</span> of <span className="font-bold">Customer Service</span> experience you could say I have a knack for speaking</>), paragraphTwo: (<> With two of those years in customer service at an <span className="font-bold">IT Service Desk</span> for <span className="font-bold">USF</span>. Solving <span className="font-bold">OS, Networking, and IT troubleshooting</span> issues directly in person, or indirectly offline over the phone. Can you dig it? </>)},
 ]; 
 
+{/* Imports for Personal Section */}
+import AviMe1 from "../public/picture/meandavi.png"
+import AviMe2 from "../public/picture/meandavi2.png"
+import Garden from "../public/picture/gardening.png"
+import Family from "../public/picture/fambam.png"
 
 export default function Home() {
   console.log("GithubIcon:", GithubIcon, typeof GithubIcon);
@@ -116,9 +121,33 @@ export default function Home() {
   
     </div>
 
-    {/* Hero section */}
-    <div className=" z-10 flex items-center justify-center bg-foreground w-full h-screen">
+    {/* Personal section */}
+    <div className=" z-10 flex items-end justify-center bg-foreground w-full h-280 ">
+        
+        <div className="flex items-start justify-start w-10/12 h-10/12 relative">
+                <Flower
+        width={100}
+        height={100}
+        className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! bottom-20 left-80 "
+      />
+      <Flower
+        width={100}
+        height={100}
+        className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! top-20 right-30 "
+      />
+          {/* Images */}
+          <Image src={AviMe1} alt="Me and my girlfriend Avi" className="absolute z-0 left-150 top-30 w-70 h-70 object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
+          <Image src={AviMe2} alt="Me and my girlfriend Avi again" className="absolute z-0 left-130 bottom-30 w-70 h-70 object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
+          <Image src={Garden} alt="Gardening" className="absolute z-0 right-0 bottom-60 w-70 h-70 object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
+          <Image src={Family} alt="Family" className="absolute z-0 left-0 top-130 w-70 h-70 object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
 
+
+          <div className="flex-col items-start justify-start w-1/3 h-auto ">
+            <h1 className="text-8xl font-display text-background">peace, love, & granola</h1>
+            <p className="text-background mt-4 font-bold">...the essential ingredients that alongside my work bring me joy. Time with family and friends, gardening, and working with the Tampa Bay community bring me emmense pride and joy. </p>
+            <p className="text-background mt-4 font-bold">Here are some rad pictures of me having a blast! </p>
+          </div>
+        </div>
     </div>
         
     </div>
