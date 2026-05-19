@@ -136,7 +136,7 @@ export default function Home() {
         className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! top-20 right-30 "
       />
           {/* Images */}
-          <Image src={AviMe1} alt="Me and my girlfriend Avi" className="absolute z-0 left-150 top-30 w-70 h-70 object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
+          <Image src={AviMe1} alt="Me and my girlfriend Avi" className="absolute z-0 left-125 top-30 w-70 h-70 object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
           <Image src={AviMe2} alt="Me and my girlfriend Avi again" className="absolute z-0 left-130 bottom-30 w-70 h-70 object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
           <Image src={Garden} alt="Gardening" className="absolute z-0 right-0 bottom-60 w-70 h-70 object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
           <Image src={Family} alt="Family" className="absolute z-0 left-0 top-130 w-70 h-70 object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />

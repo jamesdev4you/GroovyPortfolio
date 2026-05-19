@@ -5,7 +5,7 @@ import { Chicle, Roboto } from "next/font/google";
 
 import "./globals.css";
 import NavBar from "./components/navbar";
-
+import Footer from "./components/footer";
 
 const roboto = Roboto({
   weight: '400',
@@ -35,7 +35,7 @@ export default function RootLayout({
       className={`${chicle.variable} ${roboto.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <NavBar/>{children}
+        <NavBar/>{children}<Footer/>
       </body>
     </html>
   );
