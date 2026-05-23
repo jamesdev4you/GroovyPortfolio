@@ -24,7 +24,7 @@ const projectList = [
             "A recipe and lifestyle brand site with a built-in shop, video tutorials, and a clean editorial feel. Built to turn weekly content into a growing audience.",
         descriptionTwo:
             "Responsive across mobile and desktop, with fast navigation and a layout that puts the food front and center.",
-        href: "https://www.shearblisstampa.com/",
+        href: "https://www.slimandsavory.com/",
         skills: ["NextJS","Sanity", "TypeScript", "Tailwind CSS", "Vercel"],
         dark: 0,
     },
@@ -126,9 +126,11 @@ export default function Projects(){
                                     })}
                                 </div>
                                 <div className="width-auto flex items-center justify-start gap-4">
-                                    <button className="hidden md:flex hover:cursor-pointer font-display text-3xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
-                                        Website
-                                    </button>
+                                    <a href={project.href} target="_blank" rel="noopener noreferrer">
+                                        <button className="hidden md:flex hover:cursor-pointer font-display text-3xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
+                                            Website
+                                        </button>
+                                    </a>
                                     <button className="hidden md:flex hover:cursor-pointer font-display text-3xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
                                         Case Study
                                     </button>
