@@ -16,12 +16,14 @@ const projectHeroList = [
 const projectList = [
     {
         Name: "Slim & Savory",
-        picture: slimandsavoryCollage,
+        picture: slimandsavoryCollage, 
         descriptionOne:
             "A recipe and lifestyle brand site with a built-in shop, video tutorials, and a clean editorial feel. Built to turn weekly content into a growing audience.",
         descriptionTwo:
             "Responsive across mobile and desktop, with fast navigation and a layout that puts the food front and center.",
         href: "https://www.shearblisstampa.com/",
+        skills: ["NextJS","Sanity", "TypeScript", "Tailwind CSS", "Vercel"],
+        dark: 0,
     },
     {
         Name: "Brazilian Fitness",
@@ -31,6 +33,8 @@ const projectList = [
         descriptionTwo:
             "Designed to feel energetic and trustworthy, with a layout that scales cleanly from phone to widescreen.",
         href: "https://www.brazilianfitness.us/",
+        skills: ["NextJS","Sanity", "TypeScript", "Tailwind CSS", "Vercel"],
+        dark: 1,
     },
     {
         Name: "Shear Bliss Beauty Bar",
@@ -40,7 +44,27 @@ const projectList = [
         descriptionTwo:
             "Marble textures and a warm neutral palette give it a high-end boutique feel on every device.",
         href: "https://www.shearblisstampa.com/",
+        skills: ["NextJS","Sanity", "TypeScript", "Tailwind CSS", "Vercel"],
+        dark: 0,
     },
+];
+
+{/* A.I. used for colors here for speed and ease. */}
+
+const skillColorsDark = [
+  "border-red-300 text-red-300",
+  "border-yellow-300 text-yellow-300",
+  "border-blue-300 text-blue-300",
+  "border-orange-300 text-orange-300",
+  "border-green-300 text-green-300",
+];
+
+const skillColorsLight = [
+  "border-red-700 text-red-700",
+  "border-yellow-700 text-yellow-700",
+  "border-blue-800 text-blue-800",
+  "border-orange-700 text-orange-700",
+  "border-green-700 text-green-700",
 ];
 
 
@@ -48,10 +72,10 @@ export default function Projects(){
     return (
 
        
-        <div className=" flex justify-center items-center w-full h-full bg-foreground ">
+        <div className=" flex flex-col justify-center items-center w-screen h-full bg-foreground ">
 
              {/* Hero page of project */}
-            <div className="mt-30 flex-col items-start justify-center bg-foreground w-11/12 h-screen">
+            <div className="mt-30 flex-col items-center justify-center bg-foreground w-11/12 h-screen">
                 <h1 className="text-8xl w-full text-center font-display text-background">Some Gnarly Projects</h1> 
                 <div className="flex items-center justify-center w-full h-5/6">
                     {projectHeroList.map((project) => {
@@ -66,7 +90,41 @@ export default function Projects(){
             </div>
 
             {/* Project description */}
-            
+            {projectList.map((project) => {
+                    return (
+                        <div key={project.Name} className={ `${project.dark ? "bg-foreground text-background" : "bg-background text-foreground"} w-screen h-screen flex items-center justify-around border-b-2 border-foreground`}>
+                            {project.dark ? <Image src={project.picture} alt={project.Name} className="w-6/12 aspect-auto object-cover" /> : ""}
+                            <div className="flex flex-col items-start justify-center w-1/3 h-auto gap-4">
+                                <h1 className="text-6xl font-display">{project.Name}</h1>
+                                <p className="text-xl font-semibold">{project.descriptionOne}</p>  
+                                <p className="text-xl font-semibold">{project.descriptionTwo}</p>
+                                <div className="w-auto height-auto flex items-center justify-start gap-4">
+                                    {/* Skills list */}
+                                    {project.skills.map((skill, index) => {
+                                    const colors = project.dark ? skillColorsLight : skillColorsDark;
+                                    return (
+                                        <p
+                                        key={skill}
+                                        className={`text-sm font-semibold border-2 rounded w-auto px-2 py-1 ${colors[index % colors.length]}`}
+                                        >
+                                        {skill}
+                                        </p>
+                                    );
+                                    })}
+                                </div>
+                                <div className="width-auto flex items-center justify-start gap-4">
+                                    <button className="hidden md:flex hover:cursor-pointer font-display text-3xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
+                                        Website
+                                    </button>
+                                    <button className="hidden md:flex hover:cursor-pointer font-display text-3xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
+                                        Case Study
+                                    </button>
+                                </div>
+                            </div>
+                            {project.dark ? "" : <Image src={project.picture} alt={project.Name} className="w-6/12 aspect-auto object-cover" />}
+                        </div>
+                    )
+            })}
 
         </div>
     )
