@@ -1,3 +1,6 @@
+"use client"; // needed for hooks in Next.js App Router
+
+import { useRef } from "react";
 import slimandsavory from "../../public/picture/Slim-and-savory-hero-project.png";
 import shearbliss from "../../public/picture/shear-beauty-hero-project.png";
 import brazilianfitness from "../../public/picture/brazilian-fitness-hero-project.png";
@@ -69,6 +72,16 @@ const skillColorsLight = [
 
 
 export default function Projects(){
+
+    const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+    const scrollToProject = (name: string) => {
+        const index = projectList.findIndex((p) => p.Name === name);
+        if (index !== -1) {
+            sectionRefs.current[index]?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
+
     return (
 
        
@@ -80,7 +93,7 @@ export default function Projects(){
                 <div className="flex items-center justify-center w-full h-5/6">
                     {projectHeroList.map((project) => {
                         return (
-                            <div key={project.Name} className="flex flex-col items-center justify-center w-full h-1/3 gap-4">
+                            <div onClick={() => scrollToProject(project.Name)} key={project.Name} className="flex flex-col items-center justify-center w-full h-1/3 gap-4">
                                 <Image src={project.picture} alt={project.Name} className="w-9/12 hover:w-10/12 aspect-square object-cover hover:shadow-[1px_0px_19px_7px_#3C1C3C] hover:cursor-pointer transition-all delay-50" />    
                                 <h2 className="text-4xl font-display text-background hover:cursor-pointer">{project.Name}</h2>
                             </div>
@@ -90,9 +103,9 @@ export default function Projects(){
             </div>
 
             {/* Project description */}
-            {projectList.map((project) => {
+            {projectList.map((project, index) => {
                     return (
-                        <div key={project.Name} className={ `${project.dark ? "bg-foreground text-background" : "bg-background text-foreground"} w-screen h-screen flex items-center justify-around border-b-2 border-foreground`}>
+                        <div ref={(el) => { sectionRefs.current[index] = el; }} key={project.Name} className={ `${project.dark ? "bg-foreground text-background" : "bg-background text-foreground"} w-screen h-screen flex items-center justify-around border-b-2 border-foreground`}>
                             {project.dark ? <Image src={project.picture} alt={project.Name} className="w-6/12 aspect-auto object-cover" /> : ""}
                             <div className="flex flex-col items-start justify-center w-1/3 h-auto gap-4">
                                 <h1 className="text-6xl font-display">{project.Name}</h1>
