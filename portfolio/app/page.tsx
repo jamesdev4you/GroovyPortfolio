@@ -86,9 +86,11 @@ export default function Home() {
               </a>
             ))}
           </div>
-          <button className="hidden md:flex hover:cursor-pointer font-display text-3xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
-            Hire Me
-          </button>
+          <a href="/contact">
+            <button className="hidden md:flex hover:cursor-pointer font-display text-3xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
+              Hire Me
+            </button>
+          </a>
         </div>
 
       </div>

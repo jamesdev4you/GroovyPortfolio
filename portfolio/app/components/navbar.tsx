@@ -16,7 +16,7 @@ export default function NavBar() {
     const pathname = usePathname();
     /*Finish creating the navbar by flex box three sections: Title, NavList, Button for contact. Make logo */
     return (
-        <nav className="fixed z-50 top-0 w-full h-20 bg-background flex items-center md:justify-evenly justify-between md:pl-0 md:pr-0 pl-8 pr-16">
+        <nav className="fixed z-50 top-0 w-full h-20 bg-background flex items-center md:justify-evenly justify-between md:pl-0 md:pr-0 pl-4 pr-16">
             {/* This is for medium screens */}
             <div className="hidden md:flex text-3xl font-display text-foreground">James Boyle</div>
             <ul className="space-x-4 gap-10 hidden md:flex">
@@ -32,9 +32,11 @@ export default function NavBar() {
                 ))}
             </ul>
             {/* From https://v1.tailwindcss.com/components/buttons with slight modifications*/}
-            <button className="hidden md:flex hover:cursor-pointer font-display text-3xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
-            Hire Me
-            </button>
+            <a href="/contact" target="_blank" rel="noopener noreferrer">
+                <button className="hidden md:flex hover:cursor-pointer font-display text-3xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
+                Hire Me
+                </button>
+            </a>
 
             {/* This is for small and below screens */}
             <button
