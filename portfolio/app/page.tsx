@@ -50,13 +50,8 @@ export default function Home() {
     <div className=" flex flex-col w-full h-full bg-foreground ">
 
     {/* Hero section */}
-    <div className="relative pt-40 z-10 flex items-start justify-center bg-foreground w-full h-screen">
+    <div className="relative pt-40 pb-10 z-10 flex items-start justify-center bg-foreground w-full h-screen md:h-auto">
       {/* Background SVGs */}
-      <Flower
-        width={200}
-        height={200}
-        className="hidden md:flex absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! bottom-20 right-30 "
-      />
       <Flower
         width={50}
         height={50}
@@ -73,13 +68,13 @@ export default function Home() {
         className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! bottom-10 left-50 "
       />
       {/* Hero Content */}
-      <div className="flex-col items-center justify-center w-3/4 h-auto"> 
+      <div className="flex flex-col md:flex-row items-center justify-center w-3/4 md:w-full h-auto"> 
         {/* Hero Photo */}
-        <div className="flex items-center justify-center w-full h-auto mb-10">
+        <div className="flex items-center justify-center w-full md:w-1/4 h-auto mb-10">
           <Image src={HeroPic} alt="Hero Photo" className="rounded-full h-auto object-cover border-background border-2" />
         </div>
         {/* Hero Text + Links*/}
-        <div className="flex flex-col items-center  justify-center w-full h-auto gap-4 text-center">
+        <div className="flex flex-col items-center  justify-center w-full md:w-1/2 h-auto gap-4 text-center">
           <h1 className="text-4xl md:text-4xl md:w-3/4 font-display text-background">A Groovy Developer Fitting Any Vibe.</h1>
           <div className="flex items-center justify-start space-x-4">
             {SocialMedias.map(({ name, Icon, href }) => (
@@ -110,7 +105,7 @@ export default function Home() {
     </div>
 
     {/* Skills section */}
-    <div className="relative z-20 flex flex-col items-center justify-start bg-background w-full h-screen lg:h-150 pt-20">      
+    <div className="relative z-20 flex flex-col  items-center justify-start bg-background w-full h-screen md:h-110 pt-20">      
         <h1 className="text-6xl font-display text-accent w-full text-center">Some Gnarly Skills</h1>
         {/* AI way to change svg colors to  my theme colors */}
         <Flower
@@ -123,9 +118,9 @@ export default function Home() {
           height={30}
           className="absolute z-0 right-2 bottom-30 [&_path]:stroke-accent! [&_circle]:stroke-accent!"
         />
-        <div className="absolute flex-col w-10/12 h-full flex items-center justify-around top-40">
+        <div className="absolute flex-col w-10/12 md:w-11/12 h-full md:h-auto flex md:flex-row items-center justify-around top-40">
           {SkillBoxes.map(({ name, paragraphOne, paragraphTwo }) => (
-              <div key={name} className=" flex-col items-center justify-center w-full md:w-xs md:h-2/3 h-60 p-4 bg-accent rounded-lg border-2 border-background top-30">
+              <div key={name} className=" flex-col items-center justify-center w-full md:w-xs h-60 md:h-80 p-4 bg-accent rounded-lg border-2 border-background top-30">
                 <h2 className="text-4xl font-display text-background text-center underline">{name}</h2>
                 <p className="text-background mt-4 font-semibold">{paragraphOne}</p>
                 <p className="hidden text-background mt-4 font-semibold">{paragraphTwo}</p>
@@ -139,7 +134,7 @@ export default function Home() {
     {/* Personal section */}
     <div className=" z-10 flex items-center justify-center bg-foreground w-full h-auto lg:h-280 ">
         
-      <div className="flex-col items-center justify-center w-10/12 h-auto relative pb-20">
+      <div className="flex-col items-center justify-center w-10/12 md:w-8/12 h-auto relative pb-20">
         <Flower
           width={30}
           height={30}
@@ -152,8 +147,8 @@ export default function Home() {
         />
           {/* Images */}
 
-          <div className="flex-col items-start justify-start w-full h-auto pt-50">
-            <h1 className="text-4xl font-display text-background text-center">peace, love, & granola</h1>
+          <div className="flex-col items-start justify-start w-full h-auto md:pt-20 pt-50">
+            <h1 className="text-6xl font-display text-background text-center">peace, love, & granola</h1>
             <p className="text-background mt-4 font-bold">...the essential ingredients that alongside my work bring me joy. Time with family and friends, gardening, and working with the Tampa Bay community bring me emmense pride and joy. </p>
             <p className="text-background mt-4 font-bold">Here are some rad pictures of me having a blast! </p>
           </div>
