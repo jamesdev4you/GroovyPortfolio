@@ -85,17 +85,17 @@ export default function Projects(){
     return (
 
        
-        <div className=" flex flex-col justify-center items-center w-screen h-full bg-foreground ">
+        <div className=" flex flex-col justify-center items-center w-screen h-auto bg-foreground ">
 
              {/* Hero page of project */}
-            <div className="mt-30 flex-col items-center justify-center bg-foreground w-11/12 h-screen">
-                <h1 className="text-8xl w-full text-center font-display text-background">Some Gnarly Projects</h1> 
-                <div className="flex items-center justify-center w-full h-5/6">
+            <div className="mt-30 flex-col items-center justify-center bg-foreground w-11/12 h-auto">
+                <h1 className="text-4xl w-full text-center font-display text-background pb-10">Some Gnarly Projects</h1> 
+                <div className="flex-col items-center justify-center w-full h-5/6">
                     {projectHeroList.map((project) => {
                         return (
-                            <div onClick={() => scrollToProject(project.Name)} key={project.Name} className="flex flex-col items-center justify-center w-full h-1/3 gap-4">
-                                <Image src={project.picture} alt={project.Name} className="w-9/12 hover:w-10/12 aspect-square object-cover hover:shadow-[1px_0px_19px_7px_#3C1C3C] hover:cursor-pointer transition-all delay-50" />    
-                                <h2 className="text-4xl font-display text-background hover:cursor-pointer">{project.Name}</h2>
+                            <div onClick={() => scrollToProject(project.Name)} key={project.Name} className=" flex flex-col items-center justify-center w-full h-auto mb-10 gap-4">
+                                <Image src={project.picture} alt={project.Name} className="border-background border-2 w-9/12 hover:w-10/12 aspect-square object-cover hover:shadow-[1px_0px_19px_7px_#3C1C3C] hover:cursor-pointer transition-all delay-50" />    
+                                <h2 className="text-2xl font-display text-background hover:cursor-pointer">{project.Name}</h2>
                             </div>
                         )
                     }) }
@@ -105,38 +105,39 @@ export default function Projects(){
             {/* Project description */}
             {projectList.map((project, index) => {
                     return (
-                        <div ref={(el) => { sectionRefs.current[index] = el; }} key={project.Name} className={ `${project.dark ? "bg-foreground text-background" : "bg-background text-foreground"} w-screen h-screen flex items-center justify-around border-b-2 border-foreground`}>
-                            {project.dark ? <Image src={project.picture} alt={project.Name} className="w-6/12 aspect-auto object-cover" /> : ""}
-                            <div className="flex flex-col items-start justify-center w-1/3 h-auto gap-4">
-                                <h1 className="text-6xl font-display">{project.Name}</h1>
-                                <p className="text-xl font-semibold">{project.descriptionOne}</p>  
-                                <p className="text-xl font-semibold">{project.descriptionTwo}</p>
-                                <div className="w-auto height-auto flex items-center justify-start gap-4">
+                        <div ref={(el) => { sectionRefs.current[index] = el; }} key={project.Name} className={ `${project.dark ? "bg-foreground text-background" : "bg-background text-foreground"} w-screen h-auto py-10 flex-col items-center justify-center border-b-2 border-foreground`}>
+                            {project.dark ? <Image src={project.picture} alt={project.Name} className="hidden md:flex w-full aspect-auto object-cover" /> : ""}
+                            <div className="flex flex-col items-center justify-center w-full h-auto gap-4 p-3">
+                                <h1 className="text-4xl font-display">{project.Name}</h1>
+                                <p className="text-md font-semibold text-center">{project.descriptionOne}</p>  
+                                <p className="text-md font-semibold text-center">{project.descriptionTwo}</p>
+                                <div className="w-auto height-auto flex flex-wrap items-center justify-center gap-4">
                                     {/* Skills list */}
                                     {project.skills.map((skill, index) => {
                                     const colors = project.dark ? skillColorsLight : skillColorsDark;
                                     return (
                                         <p
                                         key={skill}
-                                        className={`text-sm font-semibold border-2 rounded w-auto px-2 py-1 ${colors[index % colors.length]}`}
+                                        className={`text-md font-semibold border-2 rounded w-auto px-2 py-1 ${colors[index % colors.length]}`}
                                         >
                                         {skill}
                                         </p>
                                     );
                                     })}
                                 </div>
-                                <div className="width-auto flex items-center justify-start gap-4">
+                                
+                            </div>
+                            {project.dark ? <Image src={project.picture} alt={project.Name} className="flex md:hidden w-full aspect-auto object-cover" /> : <Image src={project.picture} alt={project.Name} className="w-full aspect-auto object-cover" />}
+                            <div className="width-screen h-20 flex items-center justify-center gap-4">
                                     <a href={project.href} target="_blank" rel="noopener noreferrer">
-                                        <button className="hidden md:flex hover:cursor-pointer font-display text-3xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
+                                        <button className=" md:flex hover:cursor-pointer font-display text-2xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
                                             Website
                                         </button>
                                     </a>
-                                    <button className="hidden md:flex hover:cursor-pointer font-display text-3xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
+                                    <button className="md:flex hover:cursor-pointer font-display text-2xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
                                         Case Study
                                     </button>
                                 </div>
-                            </div>
-                            {project.dark ? "" : <Image src={project.picture} alt={project.Name} className="w-6/12 aspect-auto object-cover" />}
                         </div>
                     )
             })}

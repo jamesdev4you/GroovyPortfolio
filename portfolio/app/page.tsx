@@ -1,3 +1,4 @@
+"use client";
 
 
 
@@ -136,32 +137,32 @@ export default function Home() {
     </div>
 
     {/* Personal section */}
-    <div className=" z-10 flex items-end justify-center bg-foreground w-full h-auto lg:h-280 ">
+    <div className=" z-10 flex items-center justify-center bg-foreground w-full h-auto lg:h-280 ">
         
-      <div className="flex-col items-start justify-start w-11/12 h-auto relative pb-20">
-                <Flower
-        width={20}
-        height={20}
-        className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! bottom-20 left-0 "
-      />
-      <Flower
-        width={30}
-        height={30}
-        className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! top-60 right-3 "
-      />
+      <div className="flex-col items-center justify-center w-10/12 h-auto relative pb-20">
+        <Flower
+          width={30}
+          height={30}
+          className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! bottom-5 left-0 "
+        />
+        <Flower
+          width={30}
+          height={30}
+          className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! top-40 right-3 "
+        />
           {/* Images */}
 
-          <div className="flex-col items-start justify-start w-11/12 h-auto pt-40">
+          <div className="flex-col items-start justify-start w-full h-auto pt-50">
             <h1 className="text-4xl font-display text-background text-center">peace, love, & granola</h1>
             <p className="text-background mt-4 font-bold">...the essential ingredients that alongside my work bring me joy. Time with family and friends, gardening, and working with the Tampa Bay community bring me emmense pride and joy. </p>
             <p className="text-background mt-4 font-bold">Here are some rad pictures of me having a blast! </p>
           </div>
 
           <div className="lg:hidden flex-col w-full h-full gap-10 flex items-center justify-around pt-10">
-            <Image src={AviMe1} alt="Me and my girlfriend Avi" className="lg:absolute z-0 left-125 top-30 w-70 h-70 object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
-            <Image src={AviMe2} alt="Me and my girlfriend Avi again" className="lg:absolute  z-0 left-130 bottom-30 w-70 h-70 object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
-            <Image src={Garden} alt="Gardening" className="lg:absolute z-0 right-0 bottom-60 w-70 h-70 object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
-            <Image src={Family} alt="Family" className="lg:absolute z-0 left-0 top-130 w-70 h-70 object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
+            <Image src={AviMe1} alt="Me and my girlfriend Avi" className="lg:absolute z-0 left-125 top-30 w-full h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
+            <Image src={AviMe2} alt="Me and my girlfriend Avi again" className="lg:absolute  z-0 left-130 bottom-30 w-full h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
+            <Image src={Garden} alt="Gardening" className="lg:absolute z-0 right-0 bottom-60 w-full h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
+            <Image src={Family} alt="Family" className="lg:absolute z-0 left-0 top-130 w-full h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
           </div>
         </div>
     </div>

@@ -9,6 +9,13 @@ const NavList = [
   { name: "Blog", href: "/blog" },
 ];
 
+const PhoneNavList = [
+  { name: "Home", href: "/" },
+  { name: "Projects", href: "/projects" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact", href: "/contact" },
+];
+
 export default function NavBar() {
 
     const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +56,7 @@ export default function NavBar() {
             {/* Box that opens on isOpenm*/}
             {isOpen && (
                 <ul className="absolute top-20 left-0 w-full bg-foreground flex flex-col items-center space-y-4 py-4 border-b-2 border-background">
-                    {NavList.map((item) => (
+                    {PhoneNavList.map((item) => (
                         <li key={item.href}>
                             <Link
                                 href={item.href}
