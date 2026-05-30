@@ -19,6 +19,11 @@ const chicle = Chicle({
   variable: '--font-chicle',
 })
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
+
 export const metadata: Metadata = {
   title: "James' Groovy Portfolio",
   description: "Built with Next.js, Tailwind CSS, and TypeScript",

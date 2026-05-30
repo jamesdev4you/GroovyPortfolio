@@ -40,7 +40,7 @@ export default function Contact() {
 
                 {/* Contact info */}
                 <div className=" w-5/12 flex flex-col items-center justify-center mt-8">
-                    <h2 className="text-8xl font-display text-background">Get in Touch</h2>
+                    <h2 className="text-8xl mr-auto font-display text-background">Get in Touch</h2>
                     <p className=" w-full text-background mt-4 font-semibold text-start">Hey there, beautiful souls! The name&apos;s.. uhh well hopefully you&apos;ve seen it at least once by now. I&apos;m just a far-out cat riding the cosmic wave of computer science, ya dig? I&apos;m out here in the Tampa scene, soaking up all the good vibes while hustling at the IT service desk by day and building gnarly web apps by night. I&apos;m on this wild spiritual journey through the digital universe — weaving together Next.js, data structures, and all kinds of heavy code magic, man. The establishment may try to keep a brother down, but this cat&apos;s got his eyes on graduating spring of &apos;27 and sticking it to the man with a righteous career in software engineering!</p>
                     <h2 className="mt-40 w-full text-4xl font-display text-background">Socials</h2>
                     <div className="flex w-full items-center justify-start space-x-4">
