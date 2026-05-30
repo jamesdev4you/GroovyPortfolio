@@ -157,7 +157,7 @@ export default function Home() {
             <p className="text-background mt-4 font-bold">Here are some rad pictures of me having a blast! </p>
           </div>
 
-          <div className="lg:hidden flex-col w-full h-full gap-3 flex items-center justify-around pt-20">
+          <div className="lg:hidden flex-col w-full h-full gap-10 flex items-center justify-around pt-10">
             <Image src={AviMe1} alt="Me and my girlfriend Avi" className="lg:absolute z-0 left-125 top-30 w-70 h-70 object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
             <Image src={AviMe2} alt="Me and my girlfriend Avi again" className="lg:absolute  z-0 left-130 bottom-30 w-70 h-70 object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
             <Image src={Garden} alt="Gardening" className="lg:absolute z-0 right-0 bottom-60 w-70 h-70 object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />

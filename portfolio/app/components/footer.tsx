@@ -15,12 +15,12 @@ const SocialMedias = [
 export default function Footer() {
 
     return (
-        <footer className=" w-full h-20 bg-background flex items-center md:justify-evenly justify-between">
+        <footer className=" w-full h-20 bg-background flex items-center md:justify-evenly justify-center">
             <div className="flex items-center justify-between h-full w-10/12">
                 <button className="hidden md:flex hover:cursor-pointer font-display text-3xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
                     Resume
                 </button>
-                <div className="flex items-center justify-between w-3/12">
+                <div className="flex items-center justify-between w-full md:w-3/12">
                 {SocialMedias.map(({ name, Icon, href }) => (
                     <a key={name} href={href} target="_blank" rel="noopener noreferrer">
                         <Icon
