@@ -1,22 +1,12 @@
+"use client";
+
 import GithubIcon from "../../public/icons/github.svg"
 import LinkedInIcon from "../../public/icons/linkedin.svg"
 import InstagramIcon from "../../public/icons/instagram.svg"
 import XIcon from "../../public/icons/x.svg"
 import Flower from "../../public/icons/flower.svg"
 
-import type { NextRequest } from 'next/server';
-import { NextResponse } from 'next/server';
-
-export const POST = async (request: NextRequest) => {
-  const event = await request.json();
-
-  if (event.type === 'email.received') {
-    return NextResponse.json(event);
-  }
-
-  return NextResponse.json({});
-};
-
+import React, { useRef } from "react";
 
 const SocialMedias = [
   { name: "Github", Icon: GithubIcon, href: "https://github.com/jamesdev4you"},
@@ -25,7 +15,45 @@ const SocialMedias = [
   { name: "X", Icon: XIcon, href: "https://x.com/elonmusk"},
 ];
 
+
+
 export default function Contact() {
+
+    const form = useRef<HTMLFormElement | null>(null);
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        const formEl = form.current;
+        if (!formEl) return;
+
+        const formData = new FormData(formEl);
+
+        const payload = {
+        firstName: formData.get("user_firstname"),
+        lastName: formData.get("user_lastname"),
+        email: formData.get("user_email"),
+        phone: formData.get("user_phone"),
+        message: formData.get("message"),
+        };
+
+        try {
+        const res = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+        });
+
+        if (!res.ok) throw new Error("Failed to send");
+
+        alert("Message sent successfully!");
+        formEl.reset();
+        } catch (err) {
+        console.error(err);
+        alert("Failed to send message. Please try again.");
+        }
+    };
+
     return(
             <div className="flex relative justify-center items-center w-screen h-auto md:h-screen mt-8 bg-foreground ">
             <Flower
@@ -36,15 +64,20 @@ export default function Contact() {
                 <div className="w-full xl:w-10/12 h-auto flex flex-col md:flex md:flex-row md:p-8 md:pt-20 items-center justify-center gap-20 pt-20">
                     {/* Form */}
                     <div className="w-11/12 rounded border-background border-4 flex-col bg-background items-center justify-center h-full p-4">
-                        <form action="https://api.web3forms.com/submit" method="POST" className=" flex flex-col gap-4 h-full items-center justify-center" >
-                            <h1 className="text-6xl font-display text-foreground text-center ">Reachin&apos; out?</h1>
+                        <form onSubmit={handleSubmit} ref={form} className="flex flex-col gap-4 h-full items-center justify-center">
+                            <h1 className="text-6xl font-display text-foreground text-center">Reachin&apos; out?</h1>
                             <p className="text-foreground mt-4 font-semibold text-center">Just jot down a message real quick, and I&apos;ll get back to you as soon as I can!</p>
-                            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE"/>
-                            <input type="text" name="name" className=" rounded w-full h-12 bg-foreground p-2 text-foreground placeholder:text-gray-500 border border-background focus:accent-accent focus:border-accent" placeholder="Your Name" required/>
-                            <input type="email" name="email" className=" rounded w-full h-12 p-2 bg-foreground text-foreground placeholder:text-gray-500 border border-background focus:accent-accent focus:border-accent" placeholder="Your Email" required/>
-                            <textarea name="message" className="rounded w-full h-40 p-2 bg-foreground text-foreground placeholder:text-gray-500 border border-background focus:accent-accent focus:border-accent" placeholder="Your Message" required></textarea>
-                            <input type="hidden" name="redirect" value="https://web3forms.com/success"/>
-                            <button type="submit" className=" flex align-center justify-center hover:cursor-pointer w-full font-display text-3xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground py-2 px-4 border-background rounded" >Submit Form</button>
+
+                            <div className="flex w-full gap-4">
+                                <input type="text" name="user_firstname" className="rounded w-full h-12 bg-foreground p-2 text-background placeholder:text-gray-500 border border-background focus:border-accent" placeholder="First Name" required/>
+                                <input type="text" name="user_lastname" className="rounded w-full h-12 bg-foreground p-2 text-background placeholder:text-gray-500 border border-background focus:border-accent" placeholder="Last Name"/>
+                            </div>
+
+                            <input type="email" name="user_email" className="rounded w-full h-12 p-2 bg-foreground text-background placeholder:text-gray-500 border border-background focus:border-accent" placeholder="Your Email" required/>
+                            <input type="tel" name="user_phone" className="rounded w-full h-12 p-2 bg-foreground text-background placeholder:text-gray-500 border border-background focus:border-accent" placeholder="Your Phone (optional)"/>
+                            <textarea name="message" className="rounded w-full h-40 p-2 bg-foreground text-background placeholder:text-gray-500 border border-background focus:border-accent" placeholder="Your Message" required></textarea>
+
+                            <button type="submit" className="flex align-center justify-center hover:cursor-pointer w-full font-display text-3xl bg-foreground hover:bg-background text-background font-semibold hover:text-foreground hover:border-foreground py-2 px-4 border-background rounded">Submit Form</button>
                         </form>
                     </div>
 
