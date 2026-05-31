@@ -89,7 +89,7 @@ export default function Projects(){
 
              {/* Hero page of project */}
             <div className="mt-30 flex-col items-center justify-center w-11/12 h-auto lg:h-200">
-                <h1 className="text-4xl w-full text-center font-display text-background pb-10 lg:pb-30">Some Gnarly Projects</h1> 
+                <h1 className="text-4xl lg:text-8xl w-full text-center font-display text-background pb-10 lg:pb-30">Some Gnarly Projects</h1> 
                 <div className="md:hidden lg:hidden xl:hidden flex flex-col items-center justify-center w-full h-5/6">
                     {projectHeroList.map((project) => {
                         return (
@@ -105,7 +105,7 @@ export default function Projects(){
                         return (
                             <div onClick={() => scrollToProject(project.Name)} key={project.Name} className="flex flex-col items-center justify-center w-full md:w-1/3 h-auto mb-10 gap-4">
                                 <Image src={project.picture} alt={project.Name} className="border-background border-2 w-9/12 hover:w-10/12 aspect-square object-cover hover:shadow-[1px_0px_19px_7px_#3C1C3C] hover:cursor-pointer transition-all delay-50" />    
-                                <h2 className="text-2xl font-display text-background hover:cursor-pointer">{project.Name}</h2>
+                                <h2 className="text-2xl lg:text-6xl font-display text-background hover:cursor-pointer">{project.Name}</h2>
                             </div>
                         )
                     })}
