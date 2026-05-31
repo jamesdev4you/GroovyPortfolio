@@ -101,7 +101,7 @@ export default function Home() {
     </div>
 
     {/* Skills section */}
-    <div className="relative z-20 flex flex-col  items-center justify-start bg-background w-full h-screen md:h-110 xl:h-140 pt-20 2xl:h-160">      
+    <div className="relative z-20 flex flex-col  items-center justify-start bg-background w-full h-220 md:h-110 xl:h-140 pt-20 2xl:h-160">      
         <h1 className="text-6xl 2xl:text-8xl font-display text-accent w-full text-center">Some Gnarly Skills</h1>
         {/* AI way to change svg colors to  my theme colors */}
         <Flower
