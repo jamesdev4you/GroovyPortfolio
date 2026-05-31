@@ -71,7 +71,7 @@ export default function Home() {
         </div>
         {/* Hero Text + Links*/}
         <div className="flex flex-col items-center  justify-center w-full md:w-1/2 h-auto gap-4 text-center">
-          <h1 className="text-4xl md:text-4xl xl:text-6xl md:w-3/4 font-display text-background">A Groovy Developer Fitting Any Vibe.</h1>
+          <h1 className="text-4xl md:text-4xl lg:text-6xl xl:text-8xl md:w-3/4 font-display text-background">A Groovy Developer Fitting Any Vibe.</h1>
           <div className="flex items-center justify-start space-x-4">
             {SocialMedias.map(({ name, Icon, href }) => (
               <a key={name} href={href} target="_blank" rel="noopener noreferrer">
