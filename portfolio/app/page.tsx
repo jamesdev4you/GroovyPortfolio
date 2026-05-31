@@ -101,8 +101,8 @@ export default function Home() {
     </div>
 
     {/* Skills section */}
-    <div className="relative z-20 flex flex-col  items-center justify-start bg-background w-full h-screen md:h-110 xl:h-140 pt-20">      
-        <h1 className="text-6xl font-display text-accent w-full text-center">Some Gnarly Skills</h1>
+    <div className="relative z-20 flex flex-col  items-center justify-start bg-background w-full h-screen md:h-110 xl:h-140 pt-20 2xl:h-160">      
+        <h1 className="text-6xl 2xl:text-8xl font-display text-accent w-full text-center">Some Gnarly Skills</h1>
         {/* AI way to change svg colors to  my theme colors */}
         <Flower
           width={30}
@@ -114,7 +114,7 @@ export default function Home() {
           height={30}
           className="absolute z-0 right-2 bottom-30 [&_path]:stroke-accent! [&_circle]:stroke-accent!"
         />
-        <div className="absolute flex-col xl:pt-10 w-10/12 md:w-11/12 h-full md:h-auto flex md:flex-row items-center justify-around top-40">
+        <div className="absolute flex-col xl:pt-10 2xl:pt-30 md:w-11/12 h-full md:h-auto flex md:flex-row items-center justify-around top-40">
           {SkillBoxes.map(({ name, paragraphOne, paragraphTwo }) => (
               <div key={name} className=" flex-col items-center justify-center w-full md:w-xs lg:w-4/16 h-60 xl:h-100 md:h-80 p-4 bg-accent rounded-lg border-2 border-background top-30">
                 <h2 className="text-4xl font-display text-background text-center underline">{name}</h2>
@@ -144,9 +144,9 @@ export default function Home() {
           {/* Images */}
 
           <div className="flex-col items-start justify-start w-full xl:w-1/3 h-auto md:pt-20 xl:pt-10 lg:text-center pt-50">
-            <h1 className="text-6xl font-display text-background text-center xl:text-start">peace, love, & granola</h1>
-            <p className="text-background mt-4 font-bold xl:text-start">...the essential ingredients that alongside my work bring me joy. Time with family and friends, gardening, and working with the Tampa Bay community bring me emmense pride and joy. </p>
-            <p className="text-background mt-4 font-bold xl:text-start">Here are some rad pictures of me having a blast! </p>
+            <h1 className="text-6xl 2xl:text-8xl font-display text-background text-center xl:text-start">peace, love, & granola</h1>
+            <p className="text-background mt-4 font-bold xl:text-start ">...the essential ingredients that alongside my work bring me joy. Time with family and friends, gardening, and working with the Tampa Bay community bring me emmense pride and joy. </p>
+            <p className="text-background mt-4 font-bold xl:text-start ">Here are some rad pictures of me having a blast! </p>
           </div>
 
           <div className=" flex-col w-full xl:w-7/12 h-auto gap-10 flex md:flex-wrap md:flex-row items-center justify-around pt-10">

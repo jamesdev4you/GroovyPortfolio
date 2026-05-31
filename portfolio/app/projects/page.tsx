@@ -124,9 +124,9 @@ export default function Projects(){
                             {/* title desc and items and buttons*/}
                             <div className={`flex flex-col items-center ${project.dark ? "lg:items-start" : "lg:items-end"} justify-center w-full md:w-1/2 lg:w-5/12 lg:justify-start h-auto gap-4 p-3`}>
                                 <div className="w-full flex flex-col items-center justify-center gap-5">
-                                    <h1 className="text-4xl lg:text-8xl font-display lg:text-left text-center">{project.Name}</h1>
-                                    <p className={`text-md lg:text-2xl font-semibold text-inherit lg:w-3/4`}>{project.descriptionOne}</p>  
-                                    <p className="text-md lg:text-2xl font-semibold md:hidden lg:flex lg:w-3/4">{project.descriptionTwo}</p>
+                                    <h1 className="text-4xl lg:text-6xl 2xl:text-8xl font-display lg:text-center">{project.Name}</h1>
+                                    <p className={`text-md lg:text-xl 2xl:text-2xl font-semibold text-inherit lg:w-10/12 xl:w-3/4`}>{project.descriptionOne}</p>  
+                                    <p className="text-md lg:text-xl 2xl:text-2xl font-semibold md:hidden lg:flex lg:w-10/12 xl:w-3/4">{project.descriptionTwo}</p>
                                     <div className="w-auto height-auto flex flex-wrap items-center justify-center gap-4">
                                         {/* Skills list */}
                                         {project.skills.map((skill, index) => {
