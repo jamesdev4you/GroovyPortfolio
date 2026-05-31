@@ -4,6 +4,19 @@ import InstagramIcon from "../../public/icons/instagram.svg"
 import XIcon from "../../public/icons/x.svg"
 import Flower from "../../public/icons/flower.svg"
 
+import type { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
+
+export const POST = async (request: NextRequest) => {
+  const event = await request.json();
+
+  if (event.type === 'email.received') {
+    return NextResponse.json(event);
+  }
+
+  return NextResponse.json({});
+};
+
 
 const SocialMedias = [
   { name: "Github", Icon: GithubIcon, href: "https://github.com/jamesdev4you"},
