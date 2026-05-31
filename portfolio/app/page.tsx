@@ -65,12 +65,12 @@ export default function Home() {
       <Flower
         width={70}
         height={70}
-        className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! bottom-10 left-50 "
+        className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! bottom-10 left-10 md:hidden "
       />
       {/* Hero Content */}
       <div className="flex flex-col md:flex-row items-center justify-center w-3/4 md:w-full h-auto"> 
         {/* Hero Photo */}
-        <div className="flex items-center justify-center w-full md:w-1/4 h-auto mb-10">
+        <div className="flex items-center justify-center w-full md:w-1/3 h-auto mb-10">
           <Image src={HeroPic} alt="Hero Photo" className="rounded-full h-auto object-cover border-background border-2" />
         </div>
         {/* Hero Text + Links*/}
@@ -132,7 +132,7 @@ export default function Home() {
     </div>
 
     {/* Personal section */}
-    <div className=" z-10 flex items-center justify-center bg-foreground w-full h-auto lg:h-280 ">
+    <div className=" z-10 flex items-center justify-center bg-foreground w-full h-auto lg:h-auto ">
         
       <div className="flex-col items-center justify-center w-10/12 md:w-8/12 h-auto relative pb-20">
         <Flower
@@ -143,21 +143,21 @@ export default function Home() {
         <Flower
           width={30}
           height={30}
-          className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! top-40 right-3 "
+          className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! top-40 md:top-10 right-3 "
         />
           {/* Images */}
 
-          <div className="flex-col items-start justify-start w-full h-auto md:pt-20 pt-50">
+          <div className="flex-col items-start justify-start w-full h-auto md:pt-20 lg:text-center pt-50">
             <h1 className="text-6xl font-display text-background text-center">peace, love, & granola</h1>
             <p className="text-background mt-4 font-bold">...the essential ingredients that alongside my work bring me joy. Time with family and friends, gardening, and working with the Tampa Bay community bring me emmense pride and joy. </p>
             <p className="text-background mt-4 font-bold">Here are some rad pictures of me having a blast! </p>
           </div>
 
-          <div className="lg:hidden flex-col w-full h-full gap-10 flex items-center justify-around pt-10">
-            <Image src={AviMe1} alt="Me and my girlfriend Avi" className="lg:absolute z-0 left-125 top-30 w-full h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
-            <Image src={AviMe2} alt="Me and my girlfriend Avi again" className="lg:absolute  z-0 left-130 bottom-30 w-full h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
-            <Image src={Garden} alt="Gardening" className="lg:absolute z-0 right-0 bottom-60 w-full h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
-            <Image src={Family} alt="Family" className="lg:absolute z-0 left-0 top-130 w-full h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
+          <div className=" flex-col w-full h-full gap-10 flex md:flex-wrap md:flex-row items-center justify-around pt-10 r">
+            <Image src={AviMe1} alt="Me and my girlfriend Avi" className=" z-0 left-125 top-30 w-full md:w-5/12 h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
+            <Image src={AviMe2} alt="Me and my girlfriend Avi again" className="  z-0 left-130 bottom-30 w-full md:w-5/12 h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
+            <Image src={Garden} alt="Gardening" className=" z-0 right-0 bottom-60 w-full md:w-5/12 h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
+            <Image src={Family} alt="Family" className=" z-0 left-0 top-130 w-full md:w-5/12 h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
           </div>
         </div>
     </div>

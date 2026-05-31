@@ -20,7 +20,7 @@ export default function Contact() {
                 height={40}
                 className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! bottom-3 right-10 "
             />
-                <div className="w-full h-auto flex flex-col items-center justify-center gap-20 pt-20">
+                <div className="w-full h-auto flex flex-col md:flex md:flex-row md:p-8 md:pt-20 items-center justify-center gap-20 pt-20">
                     {/* Form */}
                     <div className="w-11/12 rounded border-background border-4 flex-col bg-background items-center justify-center h-full p-4">
                         <form action="https://api.web3forms.com/submit" method="POST" className=" flex flex-col gap-4 h-full items-center justify-center" >
@@ -36,7 +36,7 @@ export default function Contact() {
                     </div>
 
                     {/* Contact info */}
-                    <div className="mb-10 h-auto w-11/12 flex flex-col items-center justify-center">
+                    <div className="mb-10 md:mb-auto h-full w-11/12 flex flex-col items-center justify-center">
                         <h2 className="text-6xl mr-auto font-display text-background">Get in Touch</h2>
                         <p className=" w-full text-background mt-4 font-semibold text-start">Hey there, beautiful souls! The name&apos;s.. uhh well hopefully you&apos;ve seen it at least once by now. I&apos;m just a far-out cat riding the cosmic wave of computer science, ya dig? I&apos;m out here in the Tampa scene, soaking up all the good vibes while hustling at the IT service desk by day and building gnarly web apps by night. I&apos;m on this wild spiritual journey through the digital universe — weaving together Next.js, data structures, and all kinds of heavy code magic, man. The establishment may try to keep a brother down, but this cat&apos;s got his eyes on graduating spring of &apos;27 and sticking it to the man with a righteous career in software engineering!</p>
                         <h2 className="hidden lg:flex mt-40 w-full text-4xl font-display text-background">Socials</h2>

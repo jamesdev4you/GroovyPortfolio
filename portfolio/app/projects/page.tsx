@@ -25,7 +25,7 @@ const projectList = [
         descriptionTwo:
             "Responsive across mobile and desktop, with fast navigation and a layout that puts the food front and center.",
         href: "https://www.slimandsavory.com/",
-        skills: ["NextJS","Sanity", "TypeScript", "Tailwind CSS", "Vercel"],
+        skills: ["NextJS","Sanity", "TS", "Tailwind", "Vercel"],
         dark: 0,
     },
     {
@@ -36,7 +36,7 @@ const projectList = [
         descriptionTwo:
             "Designed to feel energetic and trustworthy, with a layout that scales cleanly from phone to widescreen.",
         href: "https://www.brazilianfitness.us/",
-        skills: ["NextJS","Sanity", "TypeScript", "Tailwind CSS", "Vercel"],
+        skills: ["NextJS","Sanity", "TS", "Tailwind", "Vercel"],
         dark: 1,
     },
     {
@@ -47,7 +47,7 @@ const projectList = [
         descriptionTwo:
             "Marble textures and a warm neutral palette give it a high-end boutique feel on every device.",
         href: "https://www.shearblisstampa.com/",
-        skills: ["NextJS","Sanity", "TypeScript", "Tailwind CSS", "Vercel"],
+        skills: ["NextJS","Sanity", "TS", "Tailwind", "Vercel"],
         dark: 0,
     },
 ];
@@ -85,32 +85,47 @@ export default function Projects(){
     return (
 
        
-        <div className=" flex flex-col justify-center items-center w-screen h-auto bg-foreground ">
+        <div className=" flex flex-col   justify-center items-center w-screen h-auto bg-foreground ">
 
              {/* Hero page of project */}
-            <div className="mt-30 flex-col items-center justify-center bg-foreground w-11/12 h-auto">
+            <div className="mt-30 flex-col md: items-center justify-center w-11/12 h-auto">
                 <h1 className="text-4xl w-full text-center font-display text-background pb-10">Some Gnarly Projects</h1> 
-                <div className="flex-col items-center justify-center w-full h-5/6">
+                <div className="md:hidden lg:hidden xl:hidden flex flex-col items-center justify-center w-full h-5/6">
                     {projectHeroList.map((project) => {
                         return (
-                            <div onClick={() => scrollToProject(project.Name)} key={project.Name} className=" flex flex-col items-center justify-center w-full h-auto mb-10 gap-4">
+                            <div onClick={() => scrollToProject(project.Name)} key={project.Name} className="flex flex-col items-center justify-center w-full md:w-1/3 h-auto mb-10 gap-4">
                                 <Image src={project.picture} alt={project.Name} className="border-background border-2 w-9/12 hover:w-10/12 aspect-square object-cover hover:shadow-[1px_0px_19px_7px_#3C1C3C] hover:cursor-pointer transition-all delay-50" />    
                                 <h2 className="text-2xl font-display text-background hover:cursor-pointer">{project.Name}</h2>
                             </div>
                         )
-                    }) }
+                    })}
                 </div>
+                <div className="hidden md:flex md:flex-row items-center justify-center w-full h-5/6">
+                    {projectHeroList.map((project) => {
+                        return (
+                            <div onClick={() => scrollToProject(project.Name)} key={project.Name} className="flex flex-col items-center justify-center w-full md:w-1/3 h-auto mb-10 gap-4">
+                                <Image src={project.picture} alt={project.Name} className="border-background border-2 w-9/12 hover:w-10/12 aspect-square object-cover hover:shadow-[1px_0px_19px_7px_#3C1C3C] hover:cursor-pointer transition-all delay-50" />    
+                                <h2 className="text-2xl font-display text-background hover:cursor-pointer">{project.Name}</h2>
+                            </div>
+                        )
+                    })}
+                </div>
+ 
             </div>
 
             {/* Project description */}
             {projectList.map((project, index) => {
                     return (
-                        <div ref={(el) => { sectionRefs.current[index] = el; }} key={project.Name} className={ `${project.dark ? "bg-foreground text-background" : "bg-background text-foreground"} w-screen h-auto py-10 flex-col items-center justify-center border-b-2 border-foreground`}>
-                            {project.dark ? <Image src={project.picture} alt={project.Name} className="hidden md:flex w-full aspect-auto object-cover" /> : ""}
-                            <div className="flex flex-col items-center justify-center w-full h-auto gap-4 p-3">
+                        <div ref={(el) => { sectionRefs.current[index] = el; }} key={project.Name} className={ `${project.dark ? "bg-foreground text-background" : "bg-background text-foreground"} w-screen h-auto py-10 flex-col md:flex-wrap md:flex md:flex-row items-center justify-center border-b-2 border-foreground`}>
+                            
+                            {/*image*/}
+                            {project.dark ? <Image src={project.picture} alt={project.Name} className="hidden md:flex w-full md:w-1/2 aspect-auto object-cover" /> : ""}
+                            
+                            {/* title desc and items and buttons*/}
+                            <div className="flex flex-col items-center justify-center w-full md:w-1/2 h-auto gap-4 p-3">
                                 <h1 className="text-4xl font-display">{project.Name}</h1>
                                 <p className="text-md font-semibold text-center">{project.descriptionOne}</p>  
-                                <p className="text-md font-semibold text-center">{project.descriptionTwo}</p>
+                                <p className="text-md font-semibold text-center md:hidden">{project.descriptionTwo}</p>
                                 <div className="w-auto height-auto flex flex-wrap items-center justify-center gap-4">
                                     {/* Skills list */}
                                     {project.skills.map((skill, index) => {
@@ -118,17 +133,14 @@ export default function Projects(){
                                     return (
                                         <p
                                         key={skill}
-                                        className={`text-md font-semibold border-2 rounded w-auto px-2 py-1 ${colors[index % colors.length]}`}
+                                        className={`text-md text-xs font-semibold border-2 rounded w-auto px-2 py-1 ${colors[index % colors.length]}`}
                                         >
                                         {skill}
                                         </p>
                                     );
                                     })}
                                 </div>
-                                
-                            </div>
-                            {project.dark ? <Image src={project.picture} alt={project.Name} className="flex md:hidden w-full aspect-auto object-cover" /> : <Image src={project.picture} alt={project.Name} className="w-full aspect-auto object-cover" />}
-                            <div className="width-screen h-20 flex items-center justify-center gap-4">
+                                <div className="width-screen h-20 flex items-center justify-center gap-4">
                                     <a href={project.href} target="_blank" rel="noopener noreferrer">
                                         <button className=" md:flex hover:cursor-pointer font-display text-2xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
                                             Website
@@ -138,6 +150,14 @@ export default function Projects(){
                                         Case Study
                                     </button>
                                 </div>
+                            </div>
+
+
+                            
+                            {/*image*/}
+                            {project.dark ? <Image src={project.picture} alt={project.Name} className="flex md:hidden w-full md:w-1/2 aspect-auto object-cover" /> : <Image src={project.picture} alt={project.Name} className="w-full md:w-1/2 aspect-auto object-cover" />}
+                            
+
                         </div>
                     )
             })}
