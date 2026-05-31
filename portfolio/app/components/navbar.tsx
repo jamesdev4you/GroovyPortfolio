@@ -25,7 +25,7 @@ export default function NavBar() {
     return (
         <nav className="fixed z-50 top-0 w-full h-20 bg-background flex items-center justify-evenly md:justify-between px-4 md:pl-8 md:pr-8">
             {/* This is for medium screens */}
-            <div className="text-3xl font-display text-foreground md:hidden">James Boyle</div>
+            <div className="text-3xl font-display text-foreground md:hidden lg:block">James Boyle</div>
             <ul className="space-x-4 gap-10 hidden md:flex md:pl-2">
                 {NavList.map((item) => (
                     <li key={item.href}>

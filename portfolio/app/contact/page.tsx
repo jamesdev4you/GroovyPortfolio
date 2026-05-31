@@ -14,13 +14,13 @@ const SocialMedias = [
 
 export default function Contact() {
     return(
-            <div className="relative justify-center items-center w-screen h-auto mt-8 bg-foreground ">
+            <div className="flex relative justify-center items-center w-screen h-auto md:h-screen mt-8 bg-foreground ">
             <Flower
                 width={40}
                 height={40}
                 className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! bottom-3 right-10 "
             />
-                <div className="w-full h-auto flex flex-col md:flex md:flex-row md:p-8 md:pt-20 items-center justify-center gap-20 pt-20">
+                <div className="w-full xl:w-10/12 h-auto flex flex-col md:flex md:flex-row md:p-8 md:pt-20 items-center justify-center gap-20 pt-20">
                     {/* Form */}
                     <div className="w-11/12 rounded border-background border-4 flex-col bg-background items-center justify-center h-full p-4">
                         <form action="https://api.web3forms.com/submit" method="POST" className=" flex flex-col gap-4 h-full items-center justify-center" >

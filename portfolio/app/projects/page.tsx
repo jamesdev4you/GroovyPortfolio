@@ -88,7 +88,7 @@ export default function Projects(){
         <div className=" flex flex-col   justify-center items-center w-screen h-auto bg-foreground ">
 
              {/* Hero page of project */}
-            <div className="mt-30 flex-col md: items-center justify-center w-11/12 h-auto">
+            <div className="mt-30 flex-col items-center justify-center w-11/12 h-auto">
                 <h1 className="text-4xl w-full text-center font-display text-background pb-10">Some Gnarly Projects</h1> 
                 <div className="md:hidden lg:hidden xl:hidden flex flex-col items-center justify-center w-full h-5/6">
                     {projectHeroList.map((project) => {
@@ -100,7 +100,7 @@ export default function Projects(){
                         )
                     })}
                 </div>
-                <div className="hidden md:flex md:flex-row items-center justify-center w-full h-5/6">
+                <div className="hidden md:flex md:flex-row items-center justify-center w-full lg:h-120">
                     {projectHeroList.map((project) => {
                         return (
                             <div onClick={() => scrollToProject(project.Name)} key={project.Name} className="flex flex-col items-center justify-center w-full md:w-1/3 h-auto mb-10 gap-4">
@@ -116,16 +116,16 @@ export default function Projects(){
             {/* Project description */}
             {projectList.map((project, index) => {
                     return (
-                        <div ref={(el) => { sectionRefs.current[index] = el; }} key={project.Name} className={ `${project.dark ? "bg-foreground text-background" : "bg-background text-foreground"} w-screen h-auto py-10 flex-col md:flex-wrap md:flex md:flex-row items-center justify-center border-b-2 border-foreground`}>
+                        <div ref={(el) => { sectionRefs.current[index] = el; }} key={project.Name} className={ `${project.dark ? "bg-foreground text-background" : "bg-background text-foreground"} w-screen h-auto py-10 flex-col md:flex-wrap md:flex md:flex-row items-center justify-center lg:space-between border-b-2 border-foreground`}>
                             
                             {/*image*/}
                             {project.dark ? <Image src={project.picture} alt={project.Name} className="hidden md:flex w-full md:w-1/2 aspect-auto object-cover" /> : ""}
                             
                             {/* title desc and items and buttons*/}
-                            <div className="flex flex-col items-center justify-center w-full md:w-1/2 h-auto gap-4 p-3">
+                            <div className="flex flex-col items-center justify-center w-full md:w-1/2 lg:w-5/12 lg:justify-start h-auto gap-4 p-3">
                                 <h1 className="text-4xl font-display">{project.Name}</h1>
                                 <p className="text-md font-semibold text-center">{project.descriptionOne}</p>  
-                                <p className="text-md font-semibold text-center md:hidden">{project.descriptionTwo}</p>
+                                <p className="text-md font-semibold text-center md:hidden lg:flex">{project.descriptionTwo}</p>
                                 <div className="w-auto height-auto flex flex-wrap items-center justify-center gap-4">
                                     {/* Skills list */}
                                     {project.skills.map((skill, index) => {

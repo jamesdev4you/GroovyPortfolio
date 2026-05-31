@@ -20,7 +20,7 @@ export default function Footer() {
                 <button className="hidden md:flex hover:cursor-pointer font-display text-3xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
                     Resume
                 </button>
-                <div className="flex items-center justify-between w-full md:w-5/12">
+                <div className="flex items-center justify-between w-full md:w-5/12 lg:w-3/12">
                 {SocialMedias.map(({ name, Icon, href }) => (
                     <a key={name} href={href} target="_blank" rel="noopener noreferrer">
                         <Icon
