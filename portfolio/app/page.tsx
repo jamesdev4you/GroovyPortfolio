@@ -114,7 +114,7 @@ export default function Home() {
           height={30}
           className="absolute z-0 right-2 bottom-30 [&_path]:stroke-accent! [&_circle]:stroke-accent!"
         />
-        <div className="absolute flex-col xl:pt-10 2xl:pt-30 md:w-11/12 h-full md:h-auto flex md:flex-row items-center justify-around top-40">
+        <div className="absolute flex-col w-full xl:pt-10 2xl:pt-30 md:w-11/12 h-auto gap-10 md:h-auto flex md:flex-row items-center justify-around top-40">
           {SkillBoxes.map(({ name, paragraphOne, paragraphTwo }) => (
               <div key={name} className=" flex-col items-center justify-center w-15/16 md:w-xs lg:w-4/16 h-60 xl:h-100 md:h-80 p-4 bg-accent rounded-lg border-2 border-background top-30">
                 <h2 className="text-4xl font-display text-background text-center underline">{name}</h2>
