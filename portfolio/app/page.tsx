@@ -62,11 +62,7 @@ export default function Home() {
         height={50}
         className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! top-100 left-10 "
       />
-      <Flower
-        width={70}
-        height={70}
-        className="absolute z-0 [&_path]:stroke-background! [&_circle]:stroke-background! bottom-10 left-10 md:hidden "
-      />
+
       {/* Hero Content */}
       <div className="flex flex-col md:flex-row items-center justify-center w-3/4 md:w-full h-auto"> 
         {/* Hero Photo */}
@@ -105,7 +101,7 @@ export default function Home() {
     </div>
 
     {/* Skills section */}
-    <div className="relative z-20 flex flex-col  items-center justify-start bg-background w-full h-screen md:h-110 xl:h-170 pt-20">      
+    <div className="relative z-20 flex flex-col  items-center justify-start bg-background w-full h-screen md:h-110 xl:h-140 pt-20">      
         <h1 className="text-6xl font-display text-accent w-full text-center">Some Gnarly Skills</h1>
         {/* AI way to change svg colors to  my theme colors */}
         <Flower
@@ -120,7 +116,7 @@ export default function Home() {
         />
         <div className="absolute flex-col xl:pt-10 w-10/12 md:w-11/12 h-full md:h-auto flex md:flex-row items-center justify-around top-40">
           {SkillBoxes.map(({ name, paragraphOne, paragraphTwo }) => (
-              <div key={name} className=" flex-col items-center justify-center w-full md:w-xs lg:w-5/16 h-60 xl:h-130 md:h-80 p-4 bg-accent rounded-lg border-2 border-background top-30">
+              <div key={name} className=" flex-col items-center justify-center w-full md:w-xs lg:w-4/16 h-60 xl:h-100 md:h-80 p-4 bg-accent rounded-lg border-2 border-background top-30">
                 <h2 className="text-4xl font-display text-background text-center underline">{name}</h2>
                 <p className="text-background mt-4 font-semibold">{paragraphOne}</p>
                 <p className="hidden xl:block text-background mt-4 font-semibold">{paragraphTwo}</p>
@@ -132,9 +128,9 @@ export default function Home() {
     </div>
 
     {/* Personal section */}
-    <div className=" z-10 flex items-center justify-center bg-foreground w-full h-auto lg:h-auto xl:h-screen ">
+    <div className=" z-10 flex items-center justify-center bg-foreground w-full h-auto lg:h-auto lg:pt-20 lg:pb-10 ">
         
-      <div className=" flex flex-col xl:flex-row items-center xl:items-start justify-center w-10/12 xl:w-11/12 md:w-8/12 h-auto relative pb-20 xl:pt-20">
+      <div className=" flex flex-col xl:flex-row items-center xl:items-start justify-center w-10/12 md:w-8/12 xl:w-11/12  h-auto relative pb-20">
         <Flower
           width={30}
           height={30}
@@ -153,11 +149,11 @@ export default function Home() {
             <p className="text-background mt-4 font-bold xl:text-start">Here are some rad pictures of me having a blast! </p>
           </div>
 
-          <div className=" flex-col w-full xl:w-7/12 h-full gap-10 flex md:flex-wrap md:flex-row items-center justify-around pt-10 r">
-            <Image src={AviMe1} alt="Me and my girlfriend Avi" className=" z-0 left-125 top-30 w-full md:w-5/12 h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
-            <Image src={AviMe2} alt="Me and my girlfriend Avi again" className="  z-0 left-130 bottom-30 w-full md:w-5/12 h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
-            <Image src={Garden} alt="Gardening" className=" z-0 right-0 bottom-60 w-full md:w-5/12 h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
-            <Image src={Family} alt="Family" className=" z-0 left-0 top-130 w-full md:w-5/12 h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
+          <div className=" flex-col w-full xl:w-7/12 h-auto gap-10 flex md:flex-wrap md:flex-row items-center justify-around pt-10">
+            <Image src={AviMe1} alt="Me and my girlfriend Avi" className="  w-full md:w-5/12 h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
+            <Image src={AviMe2} alt="Me and my girlfriend Avi again" className="   w-full md:w-5/12 h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
+            <Image src={Garden} alt="Gardening" className="  w-full md:w-5/12 h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
+            <Image src={Family} alt="Family" className="  w-full md:w-5/12 h-auto object-cover border-background border-2 shadow-[1px_0px_19px_7px_#3C1C3C]" />
           </div>
         </div>
     </div>

@@ -88,8 +88,8 @@ export default function Projects(){
         <div className=" flex flex-col   justify-center items-center w-screen h-auto bg-foreground ">
 
              {/* Hero page of project */}
-            <div className="mt-30 flex-col items-center justify-center w-11/12 h-auto">
-                <h1 className="text-4xl w-full text-center font-display text-background pb-10">Some Gnarly Projects</h1> 
+            <div className="mt-30 flex-col items-center justify-center w-11/12 h-auto lg:h-200">
+                <h1 className="text-4xl w-full text-center font-display text-background pb-10 lg:pb-30">Some Gnarly Projects</h1> 
                 <div className="md:hidden lg:hidden xl:hidden flex flex-col items-center justify-center w-full h-5/6">
                     {projectHeroList.map((project) => {
                         return (
@@ -122,33 +122,36 @@ export default function Projects(){
                             {project.dark ? <Image src={project.picture} alt={project.Name} className="hidden md:flex w-full md:w-1/2 aspect-auto object-cover" /> : ""}
                             
                             {/* title desc and items and buttons*/}
-                            <div className="flex flex-col items-center justify-center w-full md:w-1/2 lg:w-5/12 lg:justify-start h-auto gap-4 p-3">
-                                <h1 className="text-4xl font-display">{project.Name}</h1>
-                                <p className="text-md font-semibold text-center">{project.descriptionOne}</p>  
-                                <p className="text-md font-semibold text-center md:hidden lg:flex">{project.descriptionTwo}</p>
-                                <div className="w-auto height-auto flex flex-wrap items-center justify-center gap-4">
-                                    {/* Skills list */}
-                                    {project.skills.map((skill, index) => {
-                                    const colors = project.dark ? skillColorsLight : skillColorsDark;
-                                    return (
-                                        <p
-                                        key={skill}
-                                        className={`text-md text-xs font-semibold border-2 rounded w-auto px-2 py-1 ${colors[index % colors.length]}`}
-                                        >
-                                        {skill}
-                                        </p>
-                                    );
-                                    })}
-                                </div>
-                                <div className="width-screen h-20 flex items-center justify-center gap-4">
-                                    <a href={project.href} target="_blank" rel="noopener noreferrer">
-                                        <button className=" md:flex hover:cursor-pointer font-display text-2xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
-                                            Website
+                            <div className={`flex flex-col items-center ${project.dark ? "lg:items-start" : "lg:items-end"} justify-center w-full md:w-1/2 lg:w-5/12 lg:justify-start h-auto gap-4 p-3`}>
+                                <div className="w-full flex flex-col items-center justify-center gap-5">
+                                    <h1 className="text-4xl font-display lg:text-left">{project.Name}</h1>
+                                    <p className={`text-md font-semibold text-inherit lg:w-2/3`}>{project.descriptionOne}</p>  
+                                    <p className="text-md font-semibold md:hidden lg:flex lg:w-2/3">{project.descriptionTwo}</p>
+                                    <div className="w-auto height-auto flex flex-wrap items-center justify-center gap-4">
+                                        {/* Skills list */}
+                                        {project.skills.map((skill, index) => {
+                                        const colors = project.dark ? skillColorsLight : skillColorsDark;
+                                        return (
+                                            <p
+                                            key={skill}
+                                            className={`text-md text-xs font-semibold border-2 rounded w-auto px-2 py-1 ${colors[index % colors.length]}`}
+                                            >
+                                            {skill}
+                                            </p>
+                                        );
+                                        })}
+                                    </div>
+                                
+                                    <div className="width-screen h-20 flex items-center justify-center gap-4">
+                                        <a href={project.href} target="_blank" rel="noopener noreferrer">
+                                            <button className=" md:flex hover:cursor-pointer font-display text-2xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
+                                                Website
+                                            </button>
+                                        </a>
+                                        <button className="md:flex hover:cursor-pointer font-display text-2xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
+                                            Case Study
                                         </button>
-                                    </a>
-                                    <button className="md:flex hover:cursor-pointer font-display text-2xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
-                                        Case Study
-                                    </button>
+                                    </div>
                                 </div>
                             </div>
 
