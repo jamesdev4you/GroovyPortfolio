@@ -23,9 +23,9 @@ export default function NavBar() {
     const pathname = usePathname();
     /*Finish creating the navbar by flex box three sections: Title, NavList, Button for contact. Make logo */
     return (
-        <nav className="fixed z-50 top-0 w-full h-20 bg-background flex items-center justify-evenly md:justify-between px-4 md:pl-8 md:pr-8">
+        <nav className="fixed z-50 top-0 w-full h-20 bg-background flex items-center justify-evenly md:justify-between px-4 md:pl-8 md:pr-16">
             {/* This is for medium screens */}
-            <div className="text-3xl font-display text-foreground md:hidden lg:block">James Boyle</div>
+            <div className="text-3xl font-display text-foreground md:hidden">James Boyle</div>
             <ul className="space-x-4 gap-10 hidden md:flex md:pl-2">
                 {NavList.map((item) => (
                     <li key={item.href}>

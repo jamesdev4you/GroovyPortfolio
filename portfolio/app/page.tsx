@@ -145,7 +145,7 @@ export default function Home() {
 
           <div className="flex-col items-start justify-start w-full xl:w-1/3 h-auto md:pt-20 xl:pt-10 lg:text-center pt-50">
             <h1 className="text-6xl 2xl:text-8xl font-display text-background text-center xl:text-start">peace, love, & granola</h1>
-            <p className="text-background mt-4 font-bold xl:text-start ">...the essential ingredients that alongside my work bring me joy. Time with family and friends, gardening, and working with the Tampa Bay community bring me emmense pride and joy. </p>
+            <p className="text-background mt-4 font-bold xl:text-start ">...the essential ingredients that alongside my work bring me joy. Time with family and friends, gardening, and working with the Tampa Bay community bring me immense pride and joy. </p>
             <p className="text-background mt-4 font-bold xl:text-start ">Here are some rad pictures of me having a blast! </p>
           </div>
 
