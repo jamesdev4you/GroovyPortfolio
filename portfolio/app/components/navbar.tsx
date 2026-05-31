@@ -61,6 +61,7 @@ export default function NavBar() {
                             <Link
                                 href={item.href}
                                 className={`hover:underline font-display text-3xl text-background hover:text-primary ${pathname === item.href ? "font-bold" : ""}`}
+                                onClick={() => setIsOpen(!isOpen)}
                             >
                                 {item.name}
                             </Link>
