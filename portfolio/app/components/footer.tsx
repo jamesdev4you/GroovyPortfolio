@@ -15,7 +15,7 @@ const SocialMedias = [
 export default function Footer() {
 
     return (
-        <footer className=" w-full h-20 bg-background flex items-center md:justify-evenly justify-center">
+        <footer className=" w-screen h-20 bg-background flex items-center md:justify-evenly justify-center">
             <div className="flex items-center justify-between h-full w-10/12">
                 <button className="hidden md:flex hover:cursor-pointer font-display text-3xl bg-foreground hover:bg-background  text-background font-semibold hover:text-foreground hover:border-foreground border-2 py-2 px-4 border-background  rounded">
                     Resume
