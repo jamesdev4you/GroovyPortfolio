@@ -44,13 +44,17 @@ export default function Contact() {
             body: JSON.stringify(payload),
         });
 
-        if (!res.ok) throw new Error("Failed to send");
+        const data = await res.json();
+
+        if (!res.ok) {
+            throw new Error(data.error || "Failed to send");
+        }
 
         alert("Message sent successfully!");
         formEl.reset();
         } catch (err) {
         console.error(err);
-        alert("Failed to send message. Please try again.");
+        alert(`Failed to send: ${(err as Error).message}`);
         }
     };
 

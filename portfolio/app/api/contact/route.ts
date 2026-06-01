@@ -8,7 +8,6 @@ export async function POST(req: Request) {
     }
 
     const resend = new Resend(process.env.RESEND_API_KEY);
-
     const { firstName, lastName, email, phone, message } = await req.json();
 
     if (!firstName || !email || !message) {
@@ -18,9 +17,10 @@ export async function POST(req: Request) {
       );
     }
 
-    await resend.emails.send({
-      from: "james boyle <hello@jamesboyle.dev>",
+    const { data, error } = await resend.emails.send({
+      from: "James Boyle <hello@jamesboyle.dev>",
       to: "jamesdev4you@gmail.com",
+      replyTo: email,
       subject: "New Contact Form Submission",
       html: `
         <h2>New Contact Message</h2>
@@ -32,7 +32,12 @@ export async function POST(req: Request) {
       `,
     });
 
-    return NextResponse.json({ success: true });
+    if (error) {
+      console.error("Resend error:", error);
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
+    return NextResponse.json({ success: true, id: data?.id });
   } catch (error) {
     console.error("Contact email error:", error);
     return NextResponse.json(
