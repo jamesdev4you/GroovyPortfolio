@@ -35,7 +35,7 @@ const SkillBoxes = [
       My modern <span className="font-bold">UX/UI design</span> principles and <span className="font-bold">Color Theory</span> knowledge allow me to excel in producing technically sound products that are appealing to see and interact with.
     </>
   )},
-  {name: "Interpersonal", paragraphOne: (<> To solve problems you gotta be down with communicating! With <span className="font-bold">six years</span> of <span className="font-bold">Customer Service</span> experience you could say I have a knack for speaking</>), paragraphTwo: (<> With two of those years in customer service at an <span className="font-bold">IT Service Desk</span> for <span className="font-bold">USF</span>. Solving <span className="font-bold">OS, Networking, and IT troubleshooting</span> issues directly in person, or indirectly offline over the phone. Can you dig it? </>)},
+  {name: "Interpersonal", paragraphOne: (<> To solve problems you gotta be down with communicating! With <span className="font-bold">six years</span> of <span className="font-bold">Customer Service</span> experience you could say I have a knack for speaking.</>), paragraphTwo: (<> With two of those years in customer service at an <span className="font-bold">IT Service Desk</span> for <span className="font-bold">USF</span>. Solving <span className="font-bold">OS, Networking, and IT troubleshooting</span> issues directly in person, or indirectly offline over the phone. Can you dig it? </>)},
 ]; 
 
 {/* Imports for Personal Section */}
